@@ -5,4 +5,10 @@ class socket-io {
   		ensure   => latest,
   		provider => 'npm',
 	}
+
+	package { 'express.io':
+                ensure   => latest,
+                provider => 'npm',
+		require => Package['socket.io'],
+        }
 }
